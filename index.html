@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="grid-container">
+            <div class="item date-time"></div>
+            <div class="item day-night">
+                <div class="day-night-wrap">
+                    <img src="/assets/images/daynight-pictos.png" alt="Day/Night toggle">
+                </div>
+            </div>
+            <div class="item weather">
+                <h3 id="weather-stat"></h3>
+                <div class="weather-wrap">
+                    <img src="/assets/images/pictos-weather.png" alt="weather pictures">
+                </div>
+                <h2></h2>
+            </div>
+            <div class="item wind">
+                <img src="/assets/images/compass-arrow.png" alt="Arrow">
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item temps-precip">
+                <div class="temps-precip-item">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                    <span></span>
+                </div>
+                <div class="temps-precip-item">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                    <span></span>
+                </div>
+                <div class="temps-precip-item">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                    <span></span>
+                </div>
+                <div class="temps-precip-item">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                    <span></span>
+                </div>
+                <div class="temps-precip-item">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                    <span></span>
+                </div>
+            </div>
+            <div class="item forecast">
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="one" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="two" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="three" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="four" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="five" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="six" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="day-item">
+                    <div>
+                        <h4></h4>
+                    </div>
+                    <div class="day-item-img">
+                        <img id="seven" src="/assets/images/minipictos.png" alt="mini-weather">
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
+
+
+<!-- 
+
+Concept :
+
+
+- date-time
+
+h2 for date dynamically pushed from js
+h3 for time dynamically pushed from js
+
+- day-night 
+
+img that changes based on time
+
+- weather 
+
+h3 for name of the weather dynamically pushed from js
+img that dynamically changes based on weather  
+h2 for temperature
+
+- wind
+
+img of the compass that rotate towards where the wind direction is
+p for wind speed
+
+- temps-percip
+
+7 divs with span>img>temperature, span>img>precipitations, span>time
+
+- forecast
+
+7 divs with p>date, weather img, h4 with temperature, span with felt temperature.
+
+
+on top of that the background must adapt to current weather.
+
+we are going to use API from https://api.open-meteo.com/v1/forecast?latitude=53.0138&longitude=18.5981&hourly=temperature_2m,wind_speed_10m,apparent_temperature,precipitation,precipitation_probability,rain,showers,snowfall,wind_direction_10m&timezone=Europe%2FBerlin
+
+
+0 = storm
+24rem = raining
+47rem = partly cloudly
+65.5rem = cloudly
+85rem = windy
+107rem = sunny
+130.5rem = snowy
+
+
+0 = cloudly
+11.5rem = sunny
+23rem = raining
+35rem = partly cloudly
+46.5rem = storm
+58rem = snow
+
+-->

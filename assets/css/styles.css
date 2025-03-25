@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    grid-template-rows: 0.5fr auto auto auto;
+    width: 100%;
+    height: 87vh;
+    max-width: 120rem;
+    background-image: url(../images/default.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.item {
+    background: rgba(245, 245, 245, 0.349);
+    padding: 2rem;
+    min-width: 20rem;
+    text-align: center;
+    border-radius: 1rem;
+    border: inset 0;
+    box-shadow: 
+    inset 6px 6px 10px rgba(0, 0, 0, 0.7), 
+    inset -6px -6px 10px rgba(255, 255, 255, 0.15);
+}
+.date-time { grid-column: 1 / 2; grid-row: 1 / 2; }
+.day-night { grid-column: 1 / 2; grid-row: 2 / 3; }
+.weather { grid-column: 2 / 3; grid-row: 1 / 2; }
+.wind { grid-column: 3 / 4; grid-row: 1 / 2; }
+.temps-precip { grid-column: 2 / 4; grid-row: 2 / 3; }
+.forecast { grid-column: 1 / 4; grid-row: 3 / 5; }
+
+
+h2 {
+    font-size: 5rem;
+    margin: 4rem auto;
+    font-weight: 400;
+    color: #343553;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #343553;
+}
+
+
+.day-night {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-night-wrap {
+    display: block;
+    width: 9.5rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.day-night-wrap img {
+    position: relative;
+    right: 0;
+    transition: right 0.5s ease-in-out;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-wrap {
+    display: block;
+    width: 20rem;
+    overflow: hidden;
+    height: 21rem;
+    text-align: center;
+}
+
+.weather h2 {
+    margin: 0 auto;
+}
+
+.date-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.weather-wrap img {
+    position: relative;
+    bottom: 0;
+}
+
+.wind {
+    background-image: url(/assets/images/compass.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.wind img {
+    position: absolute;
+    top: 23%;
+    left: 43.5%;
+    transform-origin: center center;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in;
+}
+
+.wind div p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: "Inter";
+}
+
+.wind div {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 1.5rem;
+}
+
+.temps-precip {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.temps-precip-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20rem;
+    height: 15rem;
+    border-radius: 1rem;
+    box-shadow: 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.temps-precip-item ul {
+    list-style: none;
+}
+
+.temps-precip-item ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #000;
+}
+
+.temps-precip-item span {
+    color: #343553;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.forecast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.day-item {
+    width: 12.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+        4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.day-item-img {
+    width: 10rem;
+    overflow: hidden;
+}
+
+.day-item-img img {
+    position: relative;
+    right: 58rem;
+}
+
+.day-item h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.day-item span {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
