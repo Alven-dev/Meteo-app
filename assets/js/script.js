@@ -64,8 +64,8 @@ fetch(url)
             let timeSpan = tempsPrecipItems[i].querySelector("span");
 
             if (listItems.length >= 2) {
-                listItems[0].innerHTML = `<img src="./assets/images/thermometer.png" alt="termometer"> ${temperature}°C`;
-                listItems[1].innerHTML = `<img src="./assets/images/umbrella.png" alt="umbrella"> ${precipitation} mm`;
+                listItems[0].innerHTML = `<img src="/assets/images/thermometer.png" alt="termometer"> ${temperature}°C`;
+                listItems[1].innerHTML = `<img src="assets/images/umbrella.png" alt="umbrella"> ${precipitation} mm`;
             }
 
             if (timeSpan) {
