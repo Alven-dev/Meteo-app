@@ -64,8 +64,8 @@ fetch(url)
             let timeSpan = tempsPrecipItems[i].querySelector("span");
 
             if (listItems.length >= 2) {
-                listItems[0].innerHTML = `<img src="/assets/images/thermometer.png" alt="termometer"> ${temperature}°C`;
-                listItems[1].innerHTML = `<img src="/assets/images/umbrella.png" alt="umbrella"> ${precipitation} mm`;
+                listItems[0].innerHTML = `<img src="assets/images/thermometer.png" alt="termometer"> ${temperature}°C`;
+                listItems[1].innerHTML = `<img src="assets/images/umbrella.png" alt="umbrella"> ${precipitation} mm`;
             }
 
             if (timeSpan) {
@@ -155,25 +155,25 @@ function updateWeather() {
 
     if (weatherInfo === "Sunny") {
         weatherImg.style.bottom = "107rem"
-        bgUrl = "/assets/images/sun.jpg"
+        bgUrl = "assets/images/sun.jpg"
     } else if (weatherInfo === "Raining") {
         weatherImg.style.bottom = "24rem"
-        bgUrl = "/assets/images/rain.jpg"
+        bgUrl = "assets/images/rain.jpg"
     } else if (weatherInfo === "Partly Cloudy") {
         weatherImg.style.bottom = "47rem"
-        bgUrl = "../images/suncloud.jpg"
+        bgUrl = "assets/images/suncloud.jpg"
     } else if (weatherInfo === "Cloudy") {
         weatherImg.style.bottom = "65.5rem"
-        bgUrl = "/assets/images/cloud.jpg"
+        bgUrl = "assets/images/cloud.jpg"
     } else if (weatherInfo === "Windy") {
         weatherImg.style.bottom = "85rem"
-        bgUrl = "/assets/images/windy.jpg"
+        bgUrl = "assets/images/windy.jpg"
     } else if (weatherInfo === "Snowy") {
         weatherImg.style.bottom = "130.5rem"
-        bgUrl = "/assets/images/snow.jpg"
+        bgUrl = "assets/images/snow.jpg"
     } else {
         weatherImg.style.bottom = "0"
-        bgUrl = "/assets/images/thunder.jpg"
+        bgUrl = "assets/images/thunder.jpg"
     }
 
     weatherDiv.style.backgroundImage = `url('${bgUrl}')`;
