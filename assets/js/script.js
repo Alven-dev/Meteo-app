@@ -84,7 +84,7 @@ fetch(url)
         document.querySelector(".weather h3").textContent = weatherText;
         document.querySelector(".weather h2").textContent = `${temperature}°C`;
 
-        setInterval(updateCompass, 100);
+        setInterval(updateCompass(windDirection), 100);
         updateCompass(windDirection);
     })
     .catch(error => console.error("Error fetching weather data:", error));
