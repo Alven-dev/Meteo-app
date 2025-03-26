@@ -21,6 +21,8 @@ fetch(url)
         let minTemps = data.daily.temperature_2m_min.slice(1);
         let weatherCodes = data.daily.weather_code.slice(1);
 
+        // FORECAST //
+
         const weatherPositions = {
             "Cloudy": "0",
             "Sunny": "11.5rem",
@@ -56,6 +58,8 @@ fetch(url)
             }
         });
 
+        // NEXT 5h //
+
         for (let i = 0; i < 5; i++) {
             let hourIndex = nextHour + i;
             let temperature = data.hourly.temperature_2m[hourIndex] ?? "N/A";
@@ -73,19 +77,30 @@ fetch(url)
             }
         }
 
+        // WIND SPEED + COMPASS //
+
         let windSpeedElement = document.querySelector(".wind div p");
         if (windSpeedElement) {
             windSpeedElement.textContent = `Wind Speed: ${windSpeed} km/h`;
         }
 
-        let weatherText = interpretWeatherCode(weatherCode);
+        function updateCompass(windDirection) {
+            const arrow = document.querySelector(".wind img");
+            if (!arrow) return;
+        
+            arrow.style.transform = `rotate(${windDirection}deg)`;
+        }
 
+        setInterval(updateCompass(windDirection), 100);
+        updateCompass(windDirection);
+
+        // Simplifing weather codes //
+
+        let weatherText = interpretWeatherCode(weatherCode);
 
         document.querySelector(".weather h3").textContent = weatherText;
         document.querySelector(".weather h2").textContent = `${temperature}°C`;
 
-        setInterval(updateCompass(windDirection), 100);
-        updateCompass(windDirection);
     })
     .catch(error => error("Error fetching weather data:", error));
 
@@ -100,12 +115,7 @@ function interpretWeatherCode(code) {
     return "Unknown";
 }
 
-function updateCompass(windDirection) {
-    const arrow = document.querySelector(".wind img");
-    if (!arrow) return;
-
-    arrow.style.transform = `rotate(${windDirection}deg)`;
-}
+// Time and date //
 
 function updateDateTime() {
     const now = new Date();
@@ -129,6 +139,8 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
+// DAY AND NIGHT //
+
 function updateDayNight() {
     const now = new Date();
     const hours = now.getHours();
@@ -144,6 +156,8 @@ function updateDayNight() {
 
 updateDayNight();
 setInterval(updateDayNight, 6000);
+
+// UPDATE WEATHER WITH BG //
 
 function updateWeather() {
     const weatherInfo = document.getElementById("weather-stat").textContent.trim();
