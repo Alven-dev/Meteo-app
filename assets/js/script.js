@@ -16,7 +16,7 @@ fetch(url)
         let windSpeed = data.hourly.wind_speed_10m[currentHour];
         let tempsPrecipItems = document.querySelectorAll(".temps-precip-item");
         let nextHour = now.getMinutes() >= 30 ? currentHour + 1 : currentHour;
-        let dates = data.daily.time.slice(1);;
+        let dates = data.daily.time.slice(1);
         let maxTemps = data.daily.temperature_2m_max.slice(1);
         let minTemps = data.daily.temperature_2m_min.slice(1);
         let weatherCodes = data.daily.weather_code.slice(1);
@@ -87,7 +87,7 @@ fetch(url)
         setInterval(updateCompass(windDirection), 100);
         updateCompass(windDirection);
     })
-    .catch(error => console.error("Error fetching weather data:", error));
+    .catch(error => error("Error fetching weather data:", error));
 
 function interpretWeatherCode(code) {
     if ([95, 96, 99].includes(code)) return "Storm";
@@ -174,7 +174,7 @@ function updateWeather() {
     } else {
         weatherImg.style.bottom = "0"
         bgUrl = "assets/images/thunder.jpg"
-    }
+    };
 
     weatherDiv.style.backgroundImage = `url('${bgUrl}')`;
     weatherDiv.style.backgroundSize = "cover";
@@ -182,4 +182,4 @@ function updateWeather() {
 }
 
 updateWeather();
-setInterval(updateWeather, 10)
+setInterval(updateWeather, 1000)
